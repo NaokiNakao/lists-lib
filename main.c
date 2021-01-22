@@ -4,8 +4,9 @@
 
 int main()
 {
-    List* e;
-    pushFront(e, 8);
+    //List* l;
+    //pushFront(&l, 8);
+    //insertAfter(l->next, 10);
 
     return 0;
 }
