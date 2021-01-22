@@ -11,9 +11,9 @@
 
 /*
    Función    : pushFront
-   Argumentos : List** list_ref (referencia de la cabeza de la lista)
-                int new_value (valor a asignar)
-   Objetivo   : insertar un nuevo elemento al inicio de la lista
+   Argumentos : List** list_ref (referencia de la cabeza de la lista).
+                int new_value (valor a asignar).
+   Objetivo   : insertar un nuevo elemento al inicio de la lista.
    Retorno    : ---
 */
 void pushFront(List** list_ref, int new_value)
@@ -41,9 +41,9 @@ void pushFront(List** list_ref, int new_value)
 
 /*
    Función    : insertAfter
-   Argumentos : List* prev (elemento previo)
-                int new_value (valor del nuevo elemento)
-   Objetivo   : insertar un elemento posterior a otro existente
+   Argumentos : List* prev (elemento previo).
+                int new_value (valor del nuevo elemento).
+   Objetivo   : insertar un elemento posterior a otro existente.
    Retorno    : ---
 */
 void insertAfter(List* prev_element, int new_value)
@@ -76,9 +76,9 @@ void insertAfter(List* prev_element, int new_value)
 
 /*
    Función    : pushBack
-   Argumentos : List** list_ref (referencia de la cabeza de la lista)
-                int new_value (valor a asignar)
-   Objetivo   : insertar un nuevo elemento al final de la lista
+   Argumentos : List** list_ref (referencia de la cabeza de la lista).
+                int new_value (valor a asignar).
+   Objetivo   : insertar un nuevo elemento al final de la lista.
    Retorno    : ---
 */
 void pushBack(List** list_ref, int new_value)
@@ -116,13 +116,12 @@ void pushBack(List** list_ref, int new_value)
 
 /*
    Función    : insertBefore
-   Argumentos : List** list_ref (referencia de la cabeza de la lista)
-                List* next_element
-                int new_value (valor a asignar)
-   Objetivo   : insertar un nuevo elemento anterior a otro
+   Argumentos : List** list_ref (referencia de la cabeza de la lista).
+                List* next_element.
+                int new_value (valor a asignar).
+   Objetivo   : insertar un nuevo elemento anterior a otro.
    Retorno    : ---
 */
-
 void insertBefore(List** list_ref, List* next_element, int new_value)
 {
    if (next_element == NULL) // comprobando si el siguiente elemento es nulo
@@ -143,6 +142,40 @@ void insertBefore(List** list_ref, List* next_element, int new_value)
       element->prev->next = element;
    else
       (*list_ref) = element; // si el anterior del nuevo elemento es nulo, el nuevo elemento será la referencia
+
+   return;
+}
+
+/*
+   Función    : equalElements
+   Argumentos : char* str1 (cadena de texto 1).
+                char* str2 (cadena de texto 2).
+   Objetivo   : comprobar si str1 y str2 son iguales.
+   Retorno    : TRUE (1) si son iguales; FALSE (0) en caso contrario.
+*/
+static int equalElements(char* str1, char* str2)
+{
+   int i;
+
+   for (i = 0; str1[i] != NULL; i++)
+   {
+      if (str1[i] != str2[i]) return FALSE;
+   }
+
+   return TRUE;
+}
+
+void printList(List* e, char direction[])
+{
+   char f[] = "forward", b[] = "backward";
+
+   if ((*direction) != f && (*direction) != b)
+   {
+      printf("\nLa direcci%cn solo acepta 'forward' o 'backward'.\n", O_TILDE);
+      return;
+   }
+
+
 
    return;
 }
