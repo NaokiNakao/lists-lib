@@ -4,10 +4,15 @@
 
 int main()
 {
-    //List* l;
-    //pushFront(&l, 8);
-    //insertAfter(l->next, 10);
-    //pushBack(&l, 4);
+    List* l = NULL;
+
+    pushBack(&l, 6);
+    pushFront(&l, 7);
+    pushFront(&l, 1);
+    pushBack(&l, 4);
+    insertAfter(l->next, 8);
+
+    printList(l, "forward");
 
     return 0;
 }

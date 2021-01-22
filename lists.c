@@ -169,13 +169,28 @@ void printList(List* e, char direction[])
 {
    char f[] = "forward", b[] = "backward";
 
-   if ((*direction) != f && (*direction) != b)
+   if (!equalElements(direction, f) && !equalElements(direction, b))
    {
       printf("\nLa direcci%cn solo acepta 'forward' o 'backward'.\n", O_TILDE);
       return;
    }
 
-
+   if (equalElements(direction, f)) // comienzo desde el inicio de la lista
+   {
+      while (e != NULL)
+      {
+         printf("%d\n", e->value);
+         e = e->next;
+      }
+   }
+   else // comienzo desde el final de la lista
+   {
+      while (e != NULL)
+      {
+         printf("%d\n", e->value);
+         e = e->prev;
+      }
+   }
 
    return;
 }

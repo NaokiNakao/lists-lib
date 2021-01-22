@@ -11,6 +11,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Directivas de preprocesador */
+
+#define TRUE        1
+#define FALSE       0
+#define O_TILDE   162
+
 // Estructura de lista doblemente enlazada
 typedef struct Node {
    int value; // almacena el valor del nodo
@@ -24,6 +30,7 @@ void pushFront(List** list_ref, int new_value);
 void insertAfter(List* prev_element, int new_value);
 void pushBack(List** list_ref, int new_value);
 void insertBefore(List** list_ref, List* next_element, int new_value);
+void printList(List* e, char direction[]);
 
 #endif // _LISTS_H_
 
