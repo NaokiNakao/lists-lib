@@ -23,6 +23,7 @@ typedef struct Node {
 void pushFront(List** list_ref, int new_value);
 void insertAfter(List* prev_element, int new_value);
 void pushBack(List** list_ref, int new_value);
+void insertBefore(List** list_ref, List* next_element, int new_value);
 
 #endif // _LISTS_H_
 

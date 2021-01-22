@@ -13,7 +13,7 @@
    Función    : pushFront
    Argumentos : List** list_ref (referencia de la cabeza de la lista)
                 int new_value (valor a asignar)
-   Objetivo   : insertar un nuevo valor al inicio de la lista
+   Objetivo   : insertar un nuevo elemento al inicio de la lista
    Retorno    : ---
 */
 void pushFront(List** list_ref, int new_value)
@@ -23,7 +23,7 @@ void pushFront(List** list_ref, int new_value)
 
    if (element == NULL)
    {
-      printf("\nERROR: no se pudo localizar suficiente espacio en memoria\n");
+      printf("\nERROR: no se pudo localizar suficiente espacio en memoria.\n");
       return;
    }
 
@@ -50,7 +50,7 @@ void insertAfter(List* prev_element, int new_value)
 {
    if (prev_element == NULL)
    {
-      printf("\nERROR: el elemento anterior no puede ser nulo\n");
+      printf("\nERROR: el elemento anterior no puede ser nulo.\n");
       return;
    }
 
@@ -59,7 +59,7 @@ void insertAfter(List* prev_element, int new_value)
 
    if (element == NULL)
    {
-      printf("\nERROR: no se pudo localizar suficiente espacio en memoria\n");
+      printf("\nERROR: no se pudo localizar suficiente espacio en memoria.\n");
       return;
    }
 
@@ -78,7 +78,7 @@ void insertAfter(List* prev_element, int new_value)
    Función    : pushBack
    Argumentos : List** list_ref (referencia de la cabeza de la lista)
                 int new_value (valor a asignar)
-   Objetivo   : insertar un nuevo valor al final de la lista
+   Objetivo   : insertar un nuevo elemento al final de la lista
    Retorno    : ---
 */
 void pushBack(List** list_ref, int new_value)
@@ -88,7 +88,7 @@ void pushBack(List** list_ref, int new_value)
 
    if (element == NULL)
    {
-      printf("\nERROR: no se pudo localizar suficiente espacio en memoria\n");
+      printf("\nERROR: no se pudo localizar suficiente espacio en memoria.\n");
       return;
    }
 
@@ -110,6 +110,39 @@ void pushBack(List** list_ref, int new_value)
 
    last->next = element; // el siguiente del último elemento será el nuevo elemento
    element->prev = last; // el anterior del nuevo elemento será el que era último
+
+   return;
+}
+
+/*
+   Función    : insertBefore
+   Argumentos : List** list_ref (referencia de la cabeza de la lista)
+                List* next_element
+                int new_value (valor a asignar)
+   Objetivo   : insertar un nuevo elemento anterior a otro
+   Retorno    : ---
+*/
+
+void insertBefore(List** list_ref, List* next_element, int new_value)
+{
+   if (next_element == NULL) // comprobando si el siguiente elemento es nulo
+   {
+      printf("\nERROR: el elemento siguiente dado no puede ser nulo.\n");
+      return;
+   }
+
+   List* element; // nuevo elemento a asignar
+   element = (List*)malloc(sizeof(List)); // creando espacio en memoria al nuevo elemento
+
+   element->value = new_value; // asignando valor al nuevo elemento
+   element->prev = next_element->prev; // el elemento anterior del nuevo elemento será el anterior del posterior
+   next_element->prev = element; // el anterior del siguiente elemento será el nuevo elemento
+   element->next = next_element; // el siguiente del nuevo elmento será el posterior
+
+   if (element->prev != NULL) // actualizando el siguiente del elemento anterior
+      element->prev->next = element;
+   else
+      (*list_ref) = element; // si el anterior del nuevo elemento es nulo, el nuevo elemento será la referencia
 
    return;
 }
