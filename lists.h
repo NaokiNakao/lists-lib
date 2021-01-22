@@ -11,10 +11,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Estructura de lista doblemente enlazada
 typedef struct Node {
    int value; // almacena el valor del nodo
    struct Node* next; // apunta al nodo siguiente
    struct Node* prev; // apunta al nodo anterior
 }List;
 
+/* Prototipos de función */
+
+void pushFront(List** list_ref, int new_value);
+
 #endif // _LISTS_H_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

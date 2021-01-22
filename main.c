@@ -4,6 +4,8 @@
 
 int main()
 {
-    printf("Hello world!\n");
+    List* e;
+    pushFront(e, 8);
+
     return 0;
 }
