@@ -3,6 +3,7 @@
    (Archivo principal)
 
    Autor : Naoki Nakao
+   --- En desarrollo ---
 */
 
 #include "lists.h"
@@ -169,8 +170,8 @@ static int equalElements(char* str1, char* str2)
    Función    : printList
    Argumentos : List *e (referencia de lista a imprimir)
                 char direction[] (dirección en que se imprimirán los elementos).
-   Objetivo   : comprobar si str1 y str2 son iguales.
-   Retorno    : TRUE (1) si son iguales; FALSE (0) en caso contrario.
+   Objetivo   : imprimir lista en pantalla.
+   Retorno    : ---.
 */
 void printList(List* e, char direction[])
 {
@@ -221,6 +222,31 @@ int listLength(List* list_ref)
    }
 
    return total;
+}
+
+/*
+   Función    : deleteElement
+   Argumentos : List** list_ref (referencia de la cabeza de la lista).
+                List* e (elemento a eliminar).
+   Objetivo   : eliminar un elemento de la lista.
+   Retorno    : ---
+*/
+void deleteElement(List** list_ref, List* e)
+{
+   if (*list_ref == NULL || e == NULL) return; // la lista está vacía
+
+   if (*list_ref == e) // el elemento a eliminar es la cabeza de la lista
+      *list_ref = e->next;
+
+   if (e->next != NULL) // se cambia el siguiente si el elemento a eliminar no es el último
+      e->next->prev = e->prev;
+
+   if (e->prev != NULL) // se cambia el anterior si el elemento a eliminar no es el primero
+      e->prev->next = e->next;
+
+   free(e); // se elimina el espacio en memoria del elemento a eliminar
+
+   return;
 }
 
 

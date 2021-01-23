@@ -3,6 +3,7 @@
    (Archivo de cabecera)
 
    Autor : Naoki Nakao
+   --- En desarrollo ---
 */
 
 #ifndef _LISTS_H_
@@ -32,6 +33,7 @@ void pushBack(List** list_ref, int new_value);
 void insertBefore(List** list_ref, List* next_element, int new_value);
 void printList(List* e, char direction[]);
 int listLength(List* list_ref);
+void deleteElement(List** list_ref, List* e);
 
 #endif // _LISTS_H_
 
