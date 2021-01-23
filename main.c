@@ -13,6 +13,7 @@ int main()
     insertAfter(l->next, 8);
 
     printList(l, "forward");
+    printf("\nLa cantidad de elementos en la lista es : %d\n", listLength(l));
 
     return 0;
 }

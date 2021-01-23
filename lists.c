@@ -117,7 +117,7 @@ void pushBack(List** list_ref, int new_value)
 /*
    Función    : insertBefore
    Argumentos : List** list_ref (referencia de la cabeza de la lista).
-                List* next_element.
+                List* next_element (siguiente elemento).
                 int new_value (valor a asignar).
    Objetivo   : insertar un nuevo elemento anterior a otro.
    Retorno    : ---
@@ -165,6 +165,13 @@ static int equalElements(char* str1, char* str2)
    return TRUE;
 }
 
+/*
+   Función    : printList
+   Argumentos : List *e (referencia de lista a imprimir)
+                char direction[] (dirección en que se imprimirán los elementos).
+   Objetivo   : comprobar si str1 y str2 son iguales.
+   Retorno    : TRUE (1) si son iguales; FALSE (0) en caso contrario.
+*/
 void printList(List* e, char direction[])
 {
    char f[] = "forward", b[] = "backward";
@@ -193,6 +200,27 @@ void printList(List* e, char direction[])
    }
 
    return;
+}
+
+/*
+   Función    : listLength
+   Argumentos : List* list_ref (refernecia de lista).
+   Objetivo   : retornar la cantidad de elementos en la lista.
+   Retorno    : total (cantidad de elementos en la lista).
+*/
+int listLength(List* list_ref)
+{
+   int total = 0; // contador
+
+   List* current = list_ref; // iterador
+
+   while (current != NULL)
+   {
+      current = current->next;
+      total++;
+   }
+
+   return total;
 }
 
 
