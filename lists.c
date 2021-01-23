@@ -249,6 +249,20 @@ void deleteElement(List** list_ref, List* e)
    return;
 }
 
+/*
+   Función    : listFront
+   Argumentos : List* list_ref (referencia de lista).
+   Objetivo   : retornar el primer elemento de la lista.
+   Retorno    : List* list_ref (primer elemento de la lista).
+*/
+List* listFront(List* list_ref)
+{
+   while (list_ref->prev != NULL)
+      list_ref = list_ref->prev;
+
+   return list_ref;
+}
+
 
 
 

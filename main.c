@@ -15,6 +15,9 @@ int main()
     printList(l, "forward");
     printf("\nLa cantidad de elementos en la lista es : %d\n", listLength(l));
 
+    List* i = listFront(l);
+    printf("\n%d\n", i->value);
+
     /*deleteElement(&l, l); // eliminando el nodo cabeza
     deleteElement(&l, l->next); // eliminando el segundo elemento
 
