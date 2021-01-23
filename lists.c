@@ -193,6 +193,8 @@ void printList(List* e, char direction[])
    }
    else // comienzo desde el final de la lista
    {
+      while (e->next != NULL) e = e->next; // iterando hasta el último elemento
+
       while (e != NULL)
       {
          printf("%d\n", e->value);

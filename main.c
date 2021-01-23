@@ -15,15 +15,11 @@ int main()
     printList(l, "forward");
     printf("\nLa cantidad de elementos en la lista es : %d\n", listLength(l));
 
-    List* i = listBack(l);
-    printf("\n%d\n", i->value);
+    /*List* i = listBack(l);
+    printf("\n%d\n", i->value);*/
 
     /*deleteElement(&l, l); // eliminando el nodo cabeza
-    deleteElement(&l, l->next); // eliminando el segundo elemento
-
-    printf("\n\n");
-    printList(l, "forward");
-    printf("\nLa cantidad de elementos en la lista es : %d\n", listLength(l));*/
+    deleteElement(&l, l->next); // eliminando el segundo elemento*/
 
     return 0;
 }
