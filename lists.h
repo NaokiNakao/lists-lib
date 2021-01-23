@@ -35,6 +35,7 @@ void printList(List* e, char direction[]);
 int listLength(List* list_ref);
 void deleteElement(List** list_ref, List* e);
 List* listFront(List* list_ref);
+List* listBack(List* list_ref);
 
 #endif // _LISTS_H_
 

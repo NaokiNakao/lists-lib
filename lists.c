@@ -263,6 +263,20 @@ List* listFront(List* list_ref)
    return list_ref;
 }
 
+/*
+   Función    : listBack
+   Argumentos : List* list_ref (referencia de lista).
+   Objetivo   : retornar el primer elemento de la lista.
+   Retorno    : List* list_ref (primer elemento de la lista).
+*/
+List* listBack(List* list_ref)
+{
+   while (list_ref->next != NULL)
+      list_ref = list_ref->next;
+
+   return list_ref;
+}
+
 
 
 
