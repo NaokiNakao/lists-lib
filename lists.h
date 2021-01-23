@@ -1,9 +1,9 @@
 /*
    Librería para la implementación de listas.
-   (Archivo de cabecera)
+   --- Archivo de cabecera ---
 
    Autor : Naoki Nakao
-   --- En desarrollo ---
+   Fecha : 23 de enero, 2021
 */
 
 #ifndef _LISTS_H_
@@ -36,6 +36,7 @@ int listLength(List* list_ref);
 void deleteElement(List** list_ref, List* e);
 List* listFront(List* list_ref);
 List* listBack(List* list_ref);
+int searchElement(List* list_ref, int x);
 
 #endif // _LISTS_H_
 

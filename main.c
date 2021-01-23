@@ -15,6 +15,13 @@ int main()
     printList(l, "forward");
     printf("\nLa cantidad de elementos en la lista es : %d\n", listLength(l));
 
+    /*int val = 10;
+
+    if (searchElement(l, val))
+      printf("%d se encuentra en la lista.\n");
+    else
+      printf("%d no se encuentra en la lista.\n");*/
+
     /*List* i = listBack(l);
     printf("\n%d\n", i->value);*/
 

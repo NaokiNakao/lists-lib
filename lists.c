@@ -1,9 +1,9 @@
 /*
    Librería para la implementación de listas.
-   (Archivo principal)
+   --- Archivo principal ---
 
    Autor : Naoki Nakao
-   --- En desarrollo ---
+   Fecha : 23 de enero, 2021
 */
 
 #include "lists.h"
@@ -268,8 +268,8 @@ List* listFront(List* list_ref)
 /*
    Función    : listBack
    Argumentos : List* list_ref (referencia de lista).
-   Objetivo   : retornar el primer elemento de la lista.
-   Retorno    : List* list_ref (primer elemento de la lista).
+   Objetivo   : retornar el último elemento de la lista.
+   Retorno    : List* list_ref (último elemento de la lista).
 */
 List* listBack(List* list_ref)
 {
@@ -277,6 +277,26 @@ List* listBack(List* list_ref)
       list_ref = list_ref->next;
 
    return list_ref;
+}
+
+/*
+   Función    : listBack
+   Argumentos : List* list_ref (referencia de lista).
+                int x (elemento a buscar)
+   Objetivo   : indicar si un elemento se encuentra o no en la lista.
+   Retorno    : TRUE (1) si el elemento se encuentra en la lista; FALSE (0) en caso contrario.
+*/
+int searchElement(List* list_ref, int x)
+{
+   List* current = list_ref; // iterador
+
+   while (current != NULL)
+   {
+      if (current->value == x) return TRUE;
+      current = current->next;
+   }
+
+   return FALSE;
 }
 
 
