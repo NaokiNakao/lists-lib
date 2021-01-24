@@ -299,6 +299,21 @@ int searchElement(List* list_ref, int x)
    return FALSE;
 }
 
+/*
+   Función    : swap
+   Argumentos : int* x (elemento a intercambiar de lugar).
+                int* y (elemento a intercambiar de lugar).
+   Objetivo   : intercambiar los valores a los que apuntan dos elementos.
+   Retorno    : ---.
+*/
+static void swap(int* x, int *y)
+{
+   int temp = *x;
+   *x = *y;
+   *y = temp;
+   return;
+}
+
 
 
 
