@@ -359,6 +359,19 @@ static void qSort(List* list_ref, List* high)
    return;
 }
 
+/*
+   Función    : quickSort
+   Argumentos : List* list_ref (referencia de la lista a ordenar).
+   Objetivo   : función principal para la llamada del algoritmo quicksort.
+   Retorno    : ---
+*/
+void quickSort(List* list_ref)
+{
+   List* high = listBack(list_ref);
+   qSort(list_ref, high);
+   return;
+}
+
 
 
 

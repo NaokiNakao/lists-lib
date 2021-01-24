@@ -15,6 +15,10 @@ int main()
     printList(l, "forward");
     printf("\nLa cantidad de elementos en la lista es : %d\n", listLength(l));
 
+    /*printf("\n\n");
+    quickSort(l);
+    printList(l, "forward");*/
+
     /*int val = 10;
 
     if (searchElement(l, val))

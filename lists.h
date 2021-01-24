@@ -37,6 +37,7 @@ void deleteElement(List** list_ref, List* e);
 List* listFront(List* list_ref);
 List* listBack(List* list_ref);
 int searchElement(List* list_ref, int x);
+void quickSort(List* list_ref);
 
 #endif // _LISTS_H_
 
