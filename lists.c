@@ -317,9 +317,9 @@ static void swap(int* x, int *y)
 /*
    Función    : partition
    Argumentos : List* list_ref (referencia de la lista a ordenar).
-                List* pivot (elemento pivot para el ordenamiento).
+                List* high (elemento final de la lista).
    Objetivo   : implementar la partición del algoritmo quicksort, intercambiando valores menores al elemento pivot.
-   Retorno    : ---.
+   Retorno    : List* i
 */
 static List* partition(List* list_ref, List* high)
 {
@@ -339,6 +339,24 @@ static List* partition(List* list_ref, List* high)
    swap(&(i->value), &(high->value));
 
    return i;
+}
+
+/*
+   Función    : qSort
+   Argumentos : List* list_ref (referencia de la lista a ordenar).
+                List* pivot (elemento final de la lista).
+   Objetivo   : implementación recursiva de quicksort
+   Retorno    : ---
+*/
+static void qSort(List* list_ref, List* high)
+{
+   if (high != NULL && list_ref != high && list_ref != high->next)
+   {
+      List* p = partition(list_ref, high);
+      qSort(list_ref, p->prev);
+      qSort(p->next, high);
+   }
+   return;
 }
 
 
